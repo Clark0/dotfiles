@@ -1,0 +1,304 @@
+# tabspaces = 4
+
+# Campbell
+# Default olors
+[colors.primary]
+background = '#0c0c0c'
+foreground = '#cccccc'
+
+# Normal colors
+[colors.normal]
+black      = '#0c0c0c'
+red        = '#c50f1f'
+green      = '#13a10e'
+yellow     = '#c19c00'
+blue       = '#0037da'
+magenta    = '#881798'
+cyan       = '#3a96dd'
+white      = '#cccccc'
+
+# Bright colors
+[colors.bright]
+black      = '#767676'
+red        = '#e74856'
+green      = '#16c60c'
+yellow     = '#f9f1a5'
+blue       = '#3b78ff'
+magenta    = '#b4009e'
+cyan       = '#61d6d6'
+white      = '#f2f2f2'
+
+[cursor]
+style = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14
+
+[font.bold]
+family = "JetbrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetbrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetbrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetbrainsMono Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002[?"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002z"
+key = "Z"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002 "
+key = "Z"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002s"
+key = "I"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002&"
+key = "W"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002d"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002h"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002j"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002k"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002l"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002h"
+key = "Left"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002j"
+key = "Down"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002k"
+key = "Up"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002l"
+key = "Right"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002H"
+key = "H"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002J"
+key = "J"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002K"
+key = "K"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002L"
+key = "L"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002H"
+key = "Left"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002J"
+key = "Down"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002K"
+key = "Up"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002L"
+key = "Right"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "LBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "RBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "K"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "C"
+mode = "Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["-l", "-c", "zellij"]
+program = "/bin/zsh"
+
+[window]
+opacity = 0.95
+startup_mode = "Windowed"
