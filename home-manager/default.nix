@@ -24,7 +24,6 @@
     just
 		neofetch
 		wget
-		direnv
 		sshs
 		htop
 		zellij
@@ -126,6 +125,12 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
   };
 
   # Let Home Manager install and manage itself.
