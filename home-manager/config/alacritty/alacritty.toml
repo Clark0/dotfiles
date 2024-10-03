@@ -1,32 +1,29 @@
 # tabspaces = 4
 
-# Campbell
-# Default olors
-[colors.primary]
-background = '#0c0c0c'
-foreground = '#cccccc'
-
-# Normal colors
-[colors.normal]
-black      = '#0c0c0c'
-red        = '#c50f1f'
-green      = '#13a10e'
-yellow     = '#c19c00'
-blue       = '#0037da'
-magenta    = '#881798'
-cyan       = '#3a96dd'
-white      = '#cccccc'
-
-# Bright colors
+# tokyo-night
 [colors.bright]
-black      = '#767676'
-red        = '#e74856'
-green      = '#16c60c'
-yellow     = '#f9f1a5'
-blue       = '#3b78ff'
-magenta    = '#b4009e'
-cyan       = '#61d6d6'
-white      = '#f2f2f2'
+black = "#444b6a"
+blue = "#7da6ff"
+cyan = "#0db9d7"
+green = "#b9f27c"
+magenta = "#bb9af7"
+red = "#ff7a93"
+white = "#acb0d0"
+yellow = "#ff9e64"
+
+[colors.normal]
+black = "#32344a"
+blue = "#7aa2f7"
+cyan = "#449dab"
+green = "#9ece6a"
+magenta = "#ad8ee6"
+red = "#f7768e"
+white = "#787c99"
+yellow = "#e0af68"
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "#a9b1d6"
 
 [cursor]
 style = "Block"
