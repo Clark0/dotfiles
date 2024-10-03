@@ -88,6 +88,26 @@
     enable = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    initExtra = ''
+      # Add any additional configurations here
+      export PATH=$HOME/.nix-profile/bin:$PATH
+
+      if [ -e '/run/current-system/sw/bin' ]; then
+        export PATH=/run/current-system/sw/bin:$PATH
+      fi
+
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fi
+
+      if [ -e '/data03/cao.liu.l/.nix-profile/etc/profile.d/nix.sh' ]; then
+        . /data03/cao.liu.l/.nix-profile/etc/profile.d/nix.sh;
+      fi
+
+      if [ -e '/home/linuxbrew/.linuxbrew/bin/brew' ]; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      fi
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [
