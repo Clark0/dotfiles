@@ -1,4 +1,4 @@
-{ pkgs, username, useremail, homeDirectory, ... }:
+{ config, pkgs, username, useremail, homeDirectory, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,6 +30,7 @@
 		lazygit
     bat
     eza
+    zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -49,6 +50,7 @@
     ".config/zellij".source = ./config/zellij;
     ".vimrc".source = ./config/vim/vimrc;
     ".config/tmux".source = ./config/tmux;
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
   };
 
   # Home Manager can also manage your environment variables through
@@ -68,11 +70,9 @@
   #  /etc/profiles/per-user/clark/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
   home.sessionPath = [
-    "$HOME/.local/bin"
   ];
 
   programs.git = {
@@ -83,54 +83,10 @@
     userEmail = useremail;
   };
 
-  programs.zsh = {
-    enable = true;
-    syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
-    initExtra = ''
-      # Add any additional configurations here
-      export PATH=$HOME/.nix-profile/bin:$PATH
-
-      if [ -e '/run/current-system/sw/bin' ]; then
-        export PATH=/run/current-system/sw/bin:$PATH
-      fi
-
-      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-      fi
-
-      if [ -e '/data03/cao.liu.l/.nix-profile/etc/profile.d/nix.sh' ]; then
-        . /data03/cao.liu.l/.nix-profile/etc/profile.d/nix.sh;
-      fi
-
-      if [ -e '/home/linuxbrew/.linuxbrew/bin/brew' ]; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-      fi
-    '';
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "docker-compose"
-        "docker"
-        "git"
-      ];
-      theme = "dst";
-    };
-    shellAliases = {
-      lg = "lazygit";
-      cat = "bat";
-    };
-  };
-
-  programs.fzf = {
+  programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
+    nix-direnv.enable = true;
   };
 
   # Let Home Manager install and manage itself.

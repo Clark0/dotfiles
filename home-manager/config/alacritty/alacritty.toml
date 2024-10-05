@@ -292,10 +292,6 @@ mods = "Command"
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[shell]
-args = ["-l", "-c", "zellij"]
-program = "/bin/zsh"
-
 [window]
 opacity = 0.95
 startup_mode = "Windowed"
