@@ -12,8 +12,13 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
-  let
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    home-manager,
+    ...
+  }: let
     # TODO: replace with actual values
     specialArgs = {
       username = "clark";
@@ -26,8 +31,7 @@
       useremail = "caoliu98@yahoo.com";
       homeDirectory = "/home/clark";
     };
-  in
-  {
+  in {
     darwinConfigurations.Macbook = nix-darwin.lib.darwinSystem {
       inherit specialArgs;
       system = "aarch64-darwin";
@@ -47,7 +51,7 @@
 
     homeConfigurations = {
       Macbook = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "aarch64-darwin"; };
+        pkgs = import nixpkgs {system = "aarch64-darwin";};
         modules = [
           ./home-manager
         ];
@@ -57,7 +61,7 @@
 
     homeConfigurations = {
       Linux = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
           ./home-manager
         ];

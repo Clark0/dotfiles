@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Install packages from nix's official package repository.
   #
   # The packages installed here are available to all users, and are reproducible across machines, and are rollbackable.
@@ -49,14 +49,14 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-			"alacritty"
-			"google-chrome"
-			"spotify"
-			"sublime-text"
-			"visual-studio-code"
-			"monitorcontrol"
-			"font-jetbrains-mono-nerd-font"
-			"font-fira-code"
+      "alacritty"
+      "google-chrome"
+      "spotify"
+      "sublime-text"
+      "visual-studio-code"
+      "monitorcontrol"
+      "font-jetbrains-mono-nerd-font"
+      "font-fira-code"
     ];
   };
 }

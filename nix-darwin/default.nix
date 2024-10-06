@@ -1,14 +1,17 @@
-
-{ username, homeDirectory, pkgs, lib, ... }:
-
 {
-  users.users."${username}"= {
+  username,
+  homeDirectory,
+  pkgs,
+  lib,
+  ...
+}: {
+  users.users."${username}" = {
     home = homeDirectory;
     description = username;
   };
 
   # enable flakes globally
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = false;
