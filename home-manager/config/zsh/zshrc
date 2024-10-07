@@ -53,9 +53,10 @@ alias ll="l --all --header --long";
 alias cat=bat
 alias lg=lazygit
 
+
 # Load tools
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
+# source <(fzf --zsh)
+# eval "$(zoxide init zsh)"
 
 # Start zellij if using alacritty
 [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
