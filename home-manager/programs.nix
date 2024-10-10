@@ -70,6 +70,9 @@
       if [ -f ~/.config/zsh/.zshextra ]; then
         source ~/.config/zsh/.zshextra
       fi
+
+      # start zellij if using alacritty
+      [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
     '';
     sessionVariables = {
       PATH="$HOME/.local/bin:$PATH";

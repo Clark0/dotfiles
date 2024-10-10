@@ -101,6 +101,11 @@ key = "I"
 mods = "Command"
 
 [[keyboard.bindings]]
+chars = "\u0002w"
+key = "U"
+mods = "Command"
+
+[[keyboard.bindings]]
 chars = "\u0002&"
 key = "W"
 mods = "Command|Shift"
@@ -295,3 +300,4 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 [window]
 opacity = 0.95
 startup_mode = "Windowed"
+option_as_alt = "Both"
