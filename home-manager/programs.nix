@@ -5,11 +5,14 @@
   useremail,
   homeDirectory,
   ...
-}: {
+}: let
+  symlink = config.lib.file.mkOutOfStoreSymlink;
+in {
   home.packages = with pkgs; [
     hello
     neovim
     git
+    tmux
     just
     neofetch
     wget
@@ -23,26 +26,19 @@
     ripgrep
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+  # Managing dotfiles
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-    ".config/alacritty".source = ./config/alacritty;
-    ".config/zellij".source = ./config/zellij;
-    ".vimrc".source = ./config/vim/vimrc;
-    ".config/tmux".source = ./config/tmux;
-    # ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
+    ".config/alacritty".source = symlink "${homeDirectory}/dotfiles/home-manager/config/alacritty";
+    ".config/zellij".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zellij";
+    ".vimrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/vim/vimrc";
+    ".zshrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
+    ".config/nvim".source = symlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
   };
+
+  imports = [
+    ./tmux.nix
+    # ./zsh.nix
+  ];
 
   programs.git = {
     enable = true;
@@ -50,58 +46,6 @@
 
     userName = username;
     userEmail = useremail;
-  };
-
-  programs.zsh = {
-    enable = true;
-    autocd = true;
-    dotDir = ".config/zsh";
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    enableCompletion = true;
-    shellAliases = {
-      l = "eza --icons --git --time-style=long-iso --group --group-directories-first --color-scale=all";
-      ll = "l --all --header --long";
-      lt = "l --tree";
-      cat = "bat";
-      lg = "lazygit";
-    };
-    initExtra = ''
-      if [ -f ~/.config/zsh/.zshextra ]; then
-        source ~/.config/zsh/.zshextra
-      fi
-
-      # start zellij if using alacritty
-      [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
-    '';
-    sessionVariables = {
-      PATH="$HOME/.local/bin:$PATH";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git" "sudo"];
-      theme = "dst";
-    };
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.7.0";
-          sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
-        };
-      }
-      {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-syntax-highlighting";
-          rev = "0.7.0";
-          sha256 = "0s1z3whzwli5452h2yzjzzj27pf1hd45g223yv0v6hgrip9f853r";
-        };
-      }
-    ];
   };
 
   programs.fzf = {

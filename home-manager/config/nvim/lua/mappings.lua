@@ -4,7 +4,6 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map("i", "jj", "<ESC>")
+map("n", "<leader>a", "ggVG", { desc = "Select all" })
+map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlight" })

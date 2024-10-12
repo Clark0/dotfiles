@@ -24,12 +24,11 @@ return {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
+  			"vim", "lua", "vimdoc", "cpp", "python"
   		},
   	},
   },
--- nvim v0.8.0
+
   {
     "kdheepak/lazygit.nvim",
     lazy = true,

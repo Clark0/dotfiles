@@ -1,29 +1,8 @@
 # tabspaces = 4
 
-# tokyo-night
-[colors.bright]
-black = "#444b6a"
-blue = "#7da6ff"
-cyan = "#0db9d7"
-green = "#b9f27c"
-magenta = "#bb9af7"
-red = "#ff7a93"
-white = "#acb0d0"
-yellow = "#ff9e64"
-
-[colors.normal]
-black = "#32344a"
-blue = "#7aa2f7"
-cyan = "#449dab"
-green = "#9ece6a"
-magenta = "#ad8ee6"
-red = "#f7768e"
-white = "#787c99"
-yellow = "#e0af68"
-
-[colors.primary]
-background = "#1a1b26"
-foreground = "#a9b1d6"
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
 
 [cursor]
 style = "Block"
@@ -50,254 +29,73 @@ style = "Italic"
 family = "JetbrainsMono Nerd Font"
 style = "Regular"
 
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002c"
-key = "T"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002\""
-key = "D"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002%"
-key = "Return"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002[?"
-key = "F"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002z"
-key = "Z"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002 "
-key = "Z"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002s"
-key = "I"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002w"
-key = "U"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002&"
-key = "W"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002d"
-key = "Q"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002h"
-key = "H"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002j"
-key = "J"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002k"
-key = "K"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002l"
-key = "L"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002h"
-key = "Left"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002j"
-key = "Down"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002k"
-key = "Up"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002l"
-key = "Right"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002H"
-key = "H"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002J"
-key = "J"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002K"
-key = "K"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002L"
-key = "L"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002H"
-key = "Left"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002J"
-key = "Down"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002K"
-key = "Up"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002L"
-key = "Right"
-mods = "Command|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0002p"
-key = "LBracket"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u0002n"
-key = "RBracket"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00021"
-key = "Key1"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00022"
-key = "Key2"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00023"
-key = "Key3"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00024"
-key = "Key4"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00025"
-key = "Key5"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00026"
-key = "Key6"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00027"
-key = "Key7"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00028"
-key = "Key8"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u00029"
-key = "Key9"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\f"
-key = "K"
-mode = "~Vi|~Search"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "ClearHistory"
-key = "K"
-mode = "~Vi|~Search"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "ClearSelection"
-key = "C"
-mode = "Vi|~Search"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Minimize"
-key = "M"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "SpawnNewInstance"
-key = "N"
-mods = "Command"
-
-[[keyboard.bindings]]
-action = "Quit"
-key = "W"
-mods = "Command"
-
 [selection]
-save_to_clipboard = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true  # Automatically save selections to clipboard
+semantic_escape_chars = ",‚îÇ`|:\"' ()[]{}<>\t"  # Characters considered as semantic boundaries
 
 [window]
-opacity = 0.95
-startup_mode = "Windowed"
-option_as_alt = "Both"
+opacity = 0.95  # Window transparency
+startup_mode = "Windowed"  # Start in windowed mode
+option_as_alt = "Both"  # Treat Option key as Alt for both left and right Option keys
+
+[keyboard]
+bindings = [
+  # Font size controls
+  { action = "ResetFontSize", key = "Key0", mods = "Command" },    # Command + 0: Reset font size
+  { action = "IncreaseFontSize", key = "Equals", mods = "Command" }, # Command + =: Increase font size
+  { action = "DecreaseFontSize", key = "Minus", mods = "Command" },  # Command + -: Decrease font size
+
+  # Tmux-like control sequences
+  { chars = "\u0002c", key = "T", mods = "Command" },    # Command + T: Create new tmux window (Ctrl + b, c)
+  { chars = "\u0002\"", key = "D", mods = "Command" },   # Command + D: Split tmux window vertically (Ctrl + b, ")
+  { chars = "\u0002%", key = "Return", mods = "Command" }, # Command + Return: Split tmux window horizontally (Ctrl + b, %)
+  { chars = "\u0002[?", key = "F", mods = "Command" },   # Command + F: Enter tmux copy mode (Ctrl + b, [)
+  { chars = "\u0002z", key = "Z", mods = "Command" },    # Command + Z: Zoom tmux pane (Ctrl + b, z)
+  { chars = "\u0002 ", key = "Z", mods = "Command|Shift" }, # Command + Shift + Z: Unzoom tmux pane
+
+  # Navigation bindings (tmux or vim-like)
+  { chars = "\u0002h", key = "Left", mods = "Command" },   # Command + Left: Move to left pane (Ctrl + b, h)
+  { chars = "\u0002j", key = "Down", mods = "Command" },   # Command + Down: Move to bottom pane (Ctrl + b, j)
+  { chars = "\u0002k", key = "Up", mods = "Command" },     # Command + Up: Move to top pane (Ctrl + b, k)
+  { chars = "\u0002l", key = "Right", mods = "Command" },  # Command + Right: Move to right pane (Ctrl + b, l)
+
+  { chars = "\u0002h", key = "h", mods = "Command" },
+  { chars = "\u0002j", key = "j", mods = "Command" },
+  { chars = "\u0002k", key = "k", mods = "Command" },
+  { chars = "\u0002l", key = "l", mods = "Command" },
+
+  # Shift-modified navigation bindings
+  { chars = "\u0002H", key = "H", mods = "Command|Shift" }, # Command + Shift + H: Move left with shift
+  { chars = "\u0002J", key = "J", mods = "Command|Shift" }, # Command + Shift + J: Move down with shift
+  { chars = "\u0002K", key = "K", mods = "Command|Shift" }, # Command + Shift + K: Move up with shift
+  { chars = "\u0002L", key = "L", mods = "Command|Shift" }, # Command + Shift + L: Move right with shift
+
+  # Pane management bindings
+  { chars = "\u0002p", key = "LBracket", mods = "Command" },  # Command + [: Previous tmux window (Ctrl + b, p)
+  { chars = "\u0002n", key = "RBracket", mods = "Command" },  # Command + ]: Next tmux window (Ctrl + b, n)
+
+  # Window & Session switch
+  { chars = "\u0002w", key = "U", mods = "Command" },
+  { chars = "\u0002s", key = "I", mods = "Command" },
+
+  # Numbered bindings (likely for tmux window switching)
+  { chars = "\u00021", key = "Key1", mods = "Command" },  # Command + 1: Switch to window 1
+  { chars = "\u00022", key = "Key2", mods = "Command" },  # Command + 2: Switch to window 2
+  { chars = "\u00023", key = "Key3", mods = "Command" },  # Command + 3: Switch to window 3
+  { chars = "\u00024", key = "Key4", mods = "Command" },  # Command + 4: Switch to window 4
+  { chars = "\u00025", key = "Key5", mods = "Command" },  # Command + 5: Switch to window 5
+  { chars = "\u00026", key = "Key6", mods = "Command" },  # Command + 6: Switch to window 6
+  { chars = "\u00027", key = "Key7", mods = "Command" },  # Command + 7: Switch to window 7
+  { chars = "\u00028", key = "Key8", mods = "Command" },  # Command + 8: Switch to window 8
+  { chars = "\u00029", key = "Key9", mods = "Command" },  # Command + 9: Switch to window 9
+
+  # Miscellaneous controls
+  { chars = "\f", key = "K", mods = "Command", mode = "~Vi|~Search" },   # Command + K: Clear scrollback in tmux
+  { action = "ClearHistory", key = "K", mods = "Command", mode = "~Vi|~Search" },  # Command + K: Clear history
+  { action = "Paste", key = "V", mods = "Command" },     # Command + V: Paste
+  { action = "Copy", key = "C", mods = "Command" },      # Command + C: Copy
+  { action = "ClearSelection", key = "C", mods = "Command", mode = "Vi|~Search" },  # Command + C: Clear selection
+  { action = "SpawnNewInstance", key = "N", mods = "Command" },  # Command + N: Spawn new terminal instance
+  { action = "Quit", key = "W", mods = "Command" }      # Command + W: Quit application
+]
+

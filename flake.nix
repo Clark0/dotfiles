@@ -18,6 +18,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = inputs @ {
@@ -25,6 +27,7 @@
     nix-darwin,
     nixpkgs,
     home-manager,
+    catppuccin,
     ...
   }: let
     # TODO: replace with actual values
@@ -62,6 +65,7 @@
         pkgs = import nixpkgs {system = "aarch64-darwin";};
         modules = [
           ./home-manager
+          catppuccin.homeManagerModules.catppuccin
         ];
         extraSpecialArgs = specialArgs;
       };
@@ -72,6 +76,7 @@
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
           ./home-manager
+          catppuccin.homeManagerModules.catppuccin
         ];
         extraSpecialArgs = specialArgsLinux;
       };

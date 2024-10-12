@@ -14,7 +14,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZ::lib/completion.zsh
@@ -35,11 +35,11 @@ compinit -C
 zinit cdreplay -q
 
 # Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Enable searching through history
 bindkey '^[[A' history-substring-search-up
@@ -50,13 +50,18 @@ bindkey ',' autosuggest-accept
 alias ls='ls --color'
 alias l="eza --icons --git --time-style=long-iso --group --group-directories-first --color-scale=all";
 alias ll="l --all --header --long";
+alias lt="l --tree"
 alias cat=bat
 alias lg=lazygit
 
+# Shell integration
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
 
-# Load tools
-# source <(fzf --zsh)
-# eval "$(zoxide init zsh)"
+# Source additional configs
+if [ -f ~/.config/zsh/.zshextra ]; then
+  source ~/.config/zsh/.zshextra
+fi
 
 # Start zellij if using alacritty
 [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
