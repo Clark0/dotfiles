@@ -11,4 +11,13 @@ return { -- add any tools you want to have installed below
       },
     },
   },
+
+  -- LSP keymaps
+  {
+    "neovim/nvim-lspconfig",
+    opts = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = { "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover" }
+    end,
+  },
 }

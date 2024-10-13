@@ -24,6 +24,7 @@ in {
     eza
     zoxide
     ripgrep
+    fd
   ];
 
   # Managing dotfiles
