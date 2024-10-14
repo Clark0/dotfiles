@@ -8,43 +8,43 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
 zinit light sindresorhus/pure
 
-# # Plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-history-substring-search
-zinit light zdharma-continuum/fast-syntax-highlighting
-# zinit light Aloxaf/fzf-tab
+# Syntax highlighting & completions
+zinit wait lucid light-mode for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
-# Add in snippets
-zinit snippet OMZ::lib/completion.zsh
-zinit snippet OMZ::lib/history.zsh
-zinit snippet OMZ::lib/key-bindings.zsh
+# History in cache directory
+HISTFILE="$HOME/.cache/.zsh_history"
+HISTSIZE=50000
+
+# OMZ
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::command-not-found
-
-# Load completions
-autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
-
-zinit cdreplay -q
-
-# Completion styling
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zinit snippet OMZP::sudo
 
 # Enable searching through history
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey ',' autosuggest-accept
+zinit wait lucid light-mode for \
+  atload"bindkey '^[[A' history-substring-search-up; \
+			bindkey '^[[B' history-substring-search-down; \
+      bindkey ',' autosuggest-accept;" \
+  zsh-users/zsh-history-substring-search
+
+# Completions
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={a-zA-Z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+export VI_MODE_SET_CURSOR=true
+zinit snippet OMZP::vi-mode
 
 # Aliases
 alias ls='ls --color'
