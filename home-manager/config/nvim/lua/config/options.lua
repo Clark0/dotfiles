@@ -3,3 +3,7 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
+
+local opt = vim.opt
+opt.clipboard = "unnamedplus"
+opt.cursorline = false
