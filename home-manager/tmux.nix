@@ -26,25 +26,19 @@
       tmuxPlugins.cpu
       tmuxPlugins.sensible
       tmuxPlugins.yank
+      tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       set-option -g status-position top
 
-      # Vim style pane selection
-      bind -r h select-pane -L
-      bind -r j select-pane -D
-      bind -r k select-pane -U
-      bind -r l select-pane -R
-
-      # Vim style pane resize
-      bind -r H resize-pane -L 5
-      bind -r J resize-pane -D 5
-      bind -r K resize-pane -U 5
-      bind -r L resize-pane -R 5
-
       # set vi-mode
       set-window-option -g mode-keys vi
+
+      bind -n M-h resize-pane -L 5
+      bind -n M-j resize-pane -D 5
+      bind -n M-k resize-pane -U 5
+      bind -n M-l resize-pane -R 5
 
       # keybindings
       bind-key -T copy-mode-vi v send-keys -X begin-selection
