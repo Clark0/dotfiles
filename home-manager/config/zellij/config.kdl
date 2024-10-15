@@ -6,8 +6,8 @@ keybinds {
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
-        bind "Alt h" "Alt Left" { GoToPreviousTab; }
-        bind "Alt l" "Alt Right" { GoToNextTab; }
+        bind "Alt Left" "Alt Left" { GoToPreviousTab; }
+        bind "Alt Right" "Alt Right" { GoToNextTab; }
         bind "Alt t" { NewTab; }
         bind "Alt w" { CloseTab; }
         bind "Alt 1" { GoToTab 1; }
