@@ -20,9 +20,9 @@ zinit wait lucid light-mode for \
 # History in cache directory
 HISTFILE="$HOME/.cache/.zsh_history"
 HISTSIZE=50000
+zinit snippet OMZL::history.zsh
 
 # OMZ
-zinit snippet OMZL::history.zsh
 zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::kubectl
@@ -51,17 +51,19 @@ alias ls='ls --color'
 alias l="eza --icons --git --time-style=long-iso --group --group-directories-first --color-scale=all";
 alias ll="l --all --header --long";
 alias lt="l --tree"
+alias vim=nvim
 alias cat=bat
 alias lg=lazygit
+
+# Env
+export EDITOR="nvim"
 
 # Shell integration
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
 # Source additional configs
-if [ -f ~/.config/zsh/.zshextra ]; then
-  source ~/.config/zsh/.zshextra
-fi
+[ -f "$HOME/.config/zsh/.zshextra" ] && source "$HOME/.config/zsh/.zshextra"
 
 # Start zellij if using alacritty
 [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
