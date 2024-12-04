@@ -57,6 +57,7 @@
       "monitorcontrol"
       "font-jetbrains-mono-nerd-font"
       "font-fira-code"
+      "bluesnooze"
     ];
   };
 }
