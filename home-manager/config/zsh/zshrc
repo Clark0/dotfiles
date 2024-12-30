@@ -57,6 +57,7 @@ alias lg=lazygit
 
 # Env
 export EDITOR="nvim"
+export PATH=$HOME/.local/bin:$PATH
 
 # Shell integration
 source <(fzf --zsh)
