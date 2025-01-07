@@ -36,11 +36,6 @@ in {
     ".config/nvim".source = symlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
   };
 
-  imports = [
-    ./tmux.nix
-    # ./zsh.nix
-  ];
-
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -66,5 +61,9 @@ in {
 
   programs.yazi = {
     enable = true;
+    settings = {
+      show_hidden = true;
+      sort_dir_first = true;
+    };
   };
 }

@@ -4,6 +4,12 @@
   homeDirectory,
   ...
 }: {
+  # import sub modules
+  imports = [
+    ./programs.nix
+    ./tmux.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = username;
@@ -20,17 +26,6 @@
   home.sessionPath = [
   ];
 
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # import sub modules
-  imports = [
-    ./programs.nix
-  ];
 }

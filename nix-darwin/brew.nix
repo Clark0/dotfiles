@@ -50,6 +50,7 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       "alacritty"
+      "wezterm"
       "google-chrome"
       "spotify"
       "sublime-text"

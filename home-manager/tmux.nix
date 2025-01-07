@@ -6,31 +6,28 @@
     terminal = "tmux-256color";
     mouse = true;
     baseIndex = 1;
-    catppuccin = {
-      enable = true;
-      flavor = "macchiato";
-      extraConfig = ''
-        # Disable catppuccin styling windows.
-        set -g @catppuccin_window_status_style "basic"
-        set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
-        set -g @catppuccin_window_current_text "#{pane_current_path}"
-        set -g status-left ""
-        set -g  status-right "#{E:@catppuccin_status_application}"
-        set -ag status-right "#{E:@catppuccin_status_session}"
-        set -ag status-right "#{E:@catppuccin_status_user}"
-        set -ag status-right "#{E:@catppuccin_status_host}"
-        set -ag status-right "#{E:@catppuccin_status_date_time}"
-      '';
-    };
     plugins = with pkgs; [
       tmuxPlugins.cpu
       tmuxPlugins.sensible
       tmuxPlugins.yank
       tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.catppuccin
     ];
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       set-option -g status-position top
+
+      set -g @catppuccin_flavor 'macchiato'
+      # Disable catppuccin styling windows.
+      set -g @catppuccin_window_status_style "basic"
+      set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
+      set -g @catppuccin_window_current_text "#{pane_current_path}"
+      set -g status-left ""
+      set -g  status-right "#{E:@catppuccin_status_application}"
+      set -ag status-right "#{E:@catppuccin_status_session}"
+      set -ag status-right "#{E:@catppuccin_status_user}"
+      set -ag status-right "#{E:@catppuccin_status_host}"
+      set -ag status-right "#{E:@catppuccin_status_date_time}"
 
       # set vi-mode
       set-window-option -g mode-keys vi
