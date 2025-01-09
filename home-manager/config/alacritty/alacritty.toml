@@ -1,6 +1,6 @@
 # tabspaces = 4
 
-import = [
+general.import = [
   "~/.config/alacritty/catppuccin-frappe.toml"
 ]
 

@@ -15,7 +15,7 @@
     ];
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
-      set-option -g status-position top
+      # set-option -g status-position top
 
       set -g @catppuccin_flavor 'macchiato'
       # Disable catppuccin styling windows.

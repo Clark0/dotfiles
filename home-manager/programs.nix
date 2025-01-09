@@ -34,6 +34,7 @@ in {
     ".vimrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/vim/vimrc";
     ".zshrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
     ".config/nvim".source = symlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
+    ".config/wezterm".source = symlink "${homeDirectory}/dotfiles/home-manager/config/wezterm";
   };
 
   programs.git = {
