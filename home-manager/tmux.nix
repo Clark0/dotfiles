@@ -16,6 +16,9 @@
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       # set-option -g status-position top
+      set -g prefix C-a
+      unbind-key C-b
+      bind-key C-a send-prefix
 
       set -g @catppuccin_flavor 'macchiato'
       # Disable catppuccin styling windows.
