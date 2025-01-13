@@ -1,7 +1,7 @@
 # tabspaces = 4
 
 general.import = [
-  "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
 [cursor]
@@ -46,32 +46,32 @@ bindings = [
   { action = "DecreaseFontSize", key = "Minus", mods = "Command" },
 
   # Tmux-like control sequences
-  { chars = "\u0002c", key = "T", mods = "Command" },
-  { chars = "\u0002\"", key = "D", mods = "Command" },
-  { chars = "\u0002%", key = "Return", mods = "Command" },
-  { chars = "\u0002[?", key = "F", mods = "Command" },
-  { chars = "\u0002z", key = "Z", mods = "Command" },
-  { chars = "\u0002 ", key = "Z", mods = "Command|Shift" },
+  { chars = "\u0001c", key = "T", mods = "Command" },
+  { chars = "\u0001\"", key = "D", mods = "Command" },
+  { chars = "\u0001%", key = "Return", mods = "Command" },
+  { chars = "\u0001[?", key = "F", mods = "Command" },
+  { chars = "\u0001z", key = "Z", mods = "Command" },
+  { chars = "\u0001 ", key = "Z", mods = "Command|Shift" },
 
   # Navigation bindings
-  { chars = "\u0002h", key = "Left", mods = "Alt" },
-  { chars = "\u0002j", key = "Down", mods = "Alt" },
-  { chars = "\u0002k", key = "Up", mods = "Alt" },
-  { chars = "\u0002l", key = "Right", mods = "Alt" },
+  { chars = "\u0001h", key = "Left", mods = "Alt" },
+  { chars = "\u0001j", key = "Down", mods = "Alt" },
+  { chars = "\u0001k", key = "Up", mods = "Alt" },
+  { chars = "\u0001l", key = "Right", mods = "Alt" },
 
   # Shift-modified navigation bindings
-  { chars = "\u0002H", key = "H", mods = "Alt|Shift" },
-  { chars = "\u0002J", key = "J", mods = "Alt|Shift" },
-  { chars = "\u0002K", key = "K", mods = "Alt|Shift" },
-  { chars = "\u0002L", key = "L", mods = "Alt|Shift" },
+  { chars = "\u0001H", key = "H", mods = "Alt|Shift" },
+  { chars = "\u0001J", key = "J", mods = "Alt|Shift" },
+  { chars = "\u0001K", key = "K", mods = "Alt|Shift" },
+  { chars = "\u0001L", key = "L", mods = "Alt|Shift" },
 
   # Pane management bindings
-  { chars = "\u0002p", key = "LBracket", mods = "Command" },
-  { chars = "\u0002n", key = "RBracket", mods = "Command" },
+  { chars = "\u0001p", key = "LBracket", mods = "Command" },
+  { chars = "\u0001n", key = "RBracket", mods = "Command" },
 
   # Window & Session switch
-  { chars = "\u0002w", key = "U", mods = "Command" },
-  { chars = "\u0002s", key = "I", mods = "Command" },
+  { chars = "\u0001w", key = "U", mods = "Command" },
+  { chars = "\u0001s", key = "I", mods = "Command" },
 
   # Miscellaneous controls
   { chars = "\f", key = "K", mods = "Command", mode = "~Vi|~Search" },
