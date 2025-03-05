@@ -1,11 +1,14 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.lang.clangd",
     "lazyvim.plugins.extras.util.project"
   ],
+  "install_version": 7,
   "news": {
     "NEWS.md": "10960"
   },
-  "version": 7
+  "version": 8
 }

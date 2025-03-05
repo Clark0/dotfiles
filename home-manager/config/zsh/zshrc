@@ -31,8 +31,7 @@ zinit snippet OMZP::sudo
 # Enable searching through history
 zinit wait lucid light-mode for \
   atload"bindkey '^[[A' history-substring-search-up; \
-			bindkey '^[[B' history-substring-search-down; \
-      bindkey ',' autosuggest-accept;" \
+			bindkey '^[[B' history-substring-search-down;" \
   zsh-users/zsh-history-substring-search
 
 # Completions
