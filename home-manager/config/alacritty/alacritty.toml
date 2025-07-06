@@ -49,7 +49,7 @@ bindings = [
   { chars = "\u0001c", key = "T", mods = "Command" },
   { chars = "\u0001\"", key = "D", mods = "Command" },
   { chars = "\u0001%", key = "Return", mods = "Command" },
-  { chars = "\u0001[?", key = "F", mods = "Command" },
+  # { chars = "\u0001[?", key = "F", mods = "Command" },
   { chars = "\u0001z", key = "Z", mods = "Command" },
   { chars = "\u0001 ", key = "Z", mods = "Command|Shift" },
 
