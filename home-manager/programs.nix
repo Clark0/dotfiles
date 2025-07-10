@@ -35,6 +35,7 @@ in {
     ".zshrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
     ".config/nvim".source = symlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
     ".config/wezterm".source = symlink "${homeDirectory}/dotfiles/home-manager/config/wezterm";
+    ".tmux.conf".source = symlink "${homeDirectory}/dotfiles/home-manager/config/tmux/tmux.conf";
   };
 
   programs.git = {
@@ -63,8 +64,12 @@ in {
   programs.yazi = {
     enable = true;
     settings = {
-      show_hidden = true;
-      sort_dir_first = true;
+      mgr = {
+        show_hidden = true;
+        sort_by = "mtime";
+        sort_dir_first = true;
+        sort_reverse = true;
+      };
     };
   };
 }

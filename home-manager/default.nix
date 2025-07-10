@@ -7,7 +7,8 @@
   # import sub modules
   imports = [
     ./programs.nix
-    ./tmux.nix
+    # ./tmux.nix
+    # ./zsh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
