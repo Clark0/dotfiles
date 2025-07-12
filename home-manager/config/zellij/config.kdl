@@ -294,7 +294,14 @@ theme "catppuccin-mocha"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
+
+layout {
+    pane size=1 borderless=true {
+        plugin location="compact-bar"
+    }
+    pane
+}
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
