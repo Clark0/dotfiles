@@ -20,6 +20,7 @@ in {
     htop
     zellij
     lazygit
+    lazydocker
     bat
     eza
     zoxide
