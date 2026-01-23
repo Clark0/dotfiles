@@ -18,6 +18,7 @@ in {
     wget
     sshs
     htop
+    btop
     zellij
     lazygit
     lazydocker
@@ -42,9 +43,10 @@ in {
   programs.git = {
     enable = true;
     lfs.enable = true;
-
-    userName = username;
-    userEmail = useremail;
+    settings.user = {
+      name = username;
+      email = useremail;
+    };
   };
 
   programs.fzf = {

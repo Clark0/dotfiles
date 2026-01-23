@@ -6,4 +6,8 @@ vim.g.autoformat = false
 
 local opt = vim.opt
 opt.clipboard = "unnamedplus"
-opt.cursorline = false
+opt.cursorline = true
+
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
