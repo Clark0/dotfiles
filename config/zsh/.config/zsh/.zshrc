@@ -1,3 +1,7 @@
+# Cache directory
+typeset -g ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+[[ -d "${ZSH_COMPDUMP:h}" ]] || mkdir -p "${ZSH_COMPDUMP:h}"
+
 # Set up zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -18,7 +22,7 @@ zinit wait lucid light-mode for \
     zsh-users/zsh-autosuggestions
 
 # History in cache directory
-HISTFILE="$HOME/.cache/.zsh_history"
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zsh_history"
 HISTSIZE=50000
 zinit snippet OMZL::history.zsh
 
@@ -59,8 +63,8 @@ export EDITOR="nvim"
 export PATH=$HOME/.local/bin:$PATH
 
 # Shell integration
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
+command -v fzf >/dev/null && source <(fzf --zsh)
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -72,7 +76,10 @@ function y() {
 }
 
 # Source additional configs
-[ -f "$HOME/.config/zsh/.zshextra" ] && source "$HOME/.config/zsh/.zshextra"
+[ -f "$HOME/.config/zsh/zshextra" ] && source "$HOME/.config/zsh/zshextra"
 
 # Start zellij if using alacritty
 [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
+
+# opencode
+export PATH=/home/clark/.opencode/bin:$PATH

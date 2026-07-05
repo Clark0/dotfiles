@@ -1,0 +1,14 @@
+theme = Catppuccin Mocha
+
+font-thicken = true
+font-thicken-strength = 1
+adjust-cell-height = 1
+
+background-opacity = 0.9
+background-blur = true
+
+copy-on-select = clipboard
+app-notifications=no-clipboard-copy
+
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo

@@ -1,20 +1,15 @@
 {
-  config,
   pkgs,
   username,
-  useremail,
-  homeDirectory,
   ...
-}: let
-  symlink = config.lib.file.mkOutOfStoreSymlink;
-in {
+}: {
   home.packages = with pkgs; [
     hello
     neovim
     git
     tmux
     just
-    neofetch
+    fastfetch
     wget
     sshs
     htop
@@ -28,26 +23,6 @@ in {
     ripgrep
     fd
   ];
-
-  # Managing dotfiles
-  home.file = {
-    ".config/alacritty".source = symlink "${homeDirectory}/dotfiles/home-manager/config/alacritty";
-    ".config/zellij".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zellij";
-    ".vimrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/vim/vimrc";
-    ".zshrc".source = symlink "${homeDirectory}/dotfiles/home-manager/config/zsh/zshrc";
-    ".config/nvim".source = symlink "${homeDirectory}/dotfiles/home-manager/config/nvim";
-    ".config/wezterm".source = symlink "${homeDirectory}/dotfiles/home-manager/config/wezterm";
-    ".tmux.conf".source = symlink "${homeDirectory}/dotfiles/home-manager/config/tmux/tmux.conf";
-  };
-
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-    settings.user = {
-      name = username;
-      email = useremail;
-    };
-  };
 
   programs.fzf = {
     enable = true;
