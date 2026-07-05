@@ -23,6 +23,7 @@
     ripgrep
     fd
     stow
+    opencode
   ];
 
   programs.fzf = {

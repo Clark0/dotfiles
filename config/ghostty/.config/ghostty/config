@@ -1,5 +1,6 @@
 theme = Catppuccin Mocha
 
+font-family = "JetBrains Mono"
 font-thicken = true
 font-thicken-strength = 1
 adjust-cell-height = 1
