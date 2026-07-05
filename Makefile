@@ -3,19 +3,25 @@ TARGET := $(HOME)
 FLAKE := $(CURDIR)
 HOST ?= Linux
 
-.PHONY: stow unstow $(PACKAGES)
+.PHONY: stow unstow darwin-switch hm-switch hm-switch-mac $(PACKAGES)
 
 stow: $(PACKAGES)
 
 $(PACKAGES):
-	stow --target=$(TARGET) --restow config/$@
+	stow --target=$(TARGET) --dir=config --restow $@
 
 unstow:
-	for pkg in $(PACKAGES); do stow --target=$(TARGET) --delete config/$$pkg; done
+	for pkg in $(PACKAGES); do stow --target=$(TARGET) --dir=config --delete $$pkg; done
 
 # Nix
+darwin-switch:
+	sudo NIX_CONFIG="extra-experimental-features = nix-command flakes" nix run nix-darwin -- switch --flake $(FLAKE)#Macbook
+
 hm-switch:
-	$(if $(filter Macbook,$(HOST)),darwin-rebuild switch,home-manager switch) --flake $(FLAKE)#$(HOST)
+	NIX_CONFIG="extra-experimental-features = nix-command flakes" nix run home-manager -- switch --flake $(FLAKE)#Linux
+
+hm-switch-mac:
+	NIX_CONFIG="extra-experimental-features = nix-command flakes" nix run home-manager -- switch --flake $(FLAKE)#Macbook
 
 hm-update:
 	nix flake update $(FLAKE)

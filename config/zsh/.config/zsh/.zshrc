@@ -80,6 +80,3 @@ function y() {
 
 # Start zellij if using alacritty
 [ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
-
-# opencode
-export PATH=/home/clark/.opencode/bin:$PATH
