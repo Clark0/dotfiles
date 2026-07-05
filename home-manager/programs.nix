@@ -22,6 +22,7 @@
     zoxide
     ripgrep
     fd
+    stow
   ];
 
   programs.fzf = {
