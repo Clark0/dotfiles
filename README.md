@@ -1,48 +1,57 @@
-# Dotfiles Overview
+# Dotfiles
 
-My home-manager & nix-darwin configurations. Meant to work across linux and macOS.
+Home-manager & nix-darwin configurations for Linux and macOS.
+
+## Quick start
+
+```bash
+make stow         # symlink configs to ~
+make hm-switch    # activate home-manager (Linux)
+make hm-switch HOST=Macbook  # activate darwin (macOS)
+```
 
 ## Layout
-Stow owns dotfiles under `stow/`.
-Home Manager owns CLI tools and program integrations.
-`nix-darwin` owns macOS system settings and Homebrew.
 
-## Flakes
-Enable experimental-features
-```bash
-mkdir -p ~/.config/nix/
-echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+```
+config/           # stow packages (~/.config/<app>)
+  alacritty/
+  ghostty/
+  nix/
+  nvim/
+  tmux/
+  vim/
+  zellij/
+  zsh/
+home-manager/     # nix home-manager configs
+nix-darwin/       # macOS system configs
 ```
 
-If you wire this into a flake entrypoint, update `specialArgs` there.
+## Makefile
 
-## Stow
-From the repo root:
+| Target | Description |
+|---|---|
+| `make stow` | Symlink all configs to `~` |
+| `make unstow` | Remove symlinks |
+| `make hm-switch` | Activate Linux home-manager |
+| `make hm-switch HOST=Macbook` | Activate macOS darwin |
+| `make hm-update` | Update flake inputs |
+| `make hm-gc` | GC nix store (>30d old) |
+| `make hm-optimise` | Deduplicate nix store |
+
+## Manual commands
+
+Home-manager (Linux):
 ```bash
-stow -d stow -t ~ alacritty ghostty nix nvim tmux vim zellij zshrc
+home-manager switch --flake .#Linux
 ```
 
-### Nix-darwin
-To apply changes to the system
+nix-darwin (macOS):
 ```bash
-nix run nix-darwin -- switch --flake .#Macbook
 darwin-rebuild switch --flake .#Macbook
 ```
-Note: Homebrew may need to be installed manually.
 
-### Home manager
-To apply changes to the home \
-For macOS:
-```bash
-nix run nixpkgs#home-manager -- switch -b bak --flake .#Macbook
-```
+## Configs
 
-For Linux
-```bash
-nix run nixpkgs#home-manager -- switch -b bak --flake .#Linux
-```
-
-## Applications
-* System apps: [nix-darwin/brew.nix](nix-darwin/brew.nix)
-* User packages and integrations: [home-manager/default.nix](home-manager/default.nix)
-* Dotfiles configs: [stow](stow/)
+- **System apps:** [nix-darwin/brew.nix](nix-darwin/brew.nix)
+- **User packages:** [home-manager/default.nix](home-manager/default.nix)
+- **Dotfiles:** [config/](config/)
