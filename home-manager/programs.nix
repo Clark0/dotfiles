@@ -20,10 +20,12 @@
     bat
     eza
     zoxide
+    delta
     ripgrep
     fd
     stow
     opencode
+    nodejs
   ];
 
   programs.fzf = {

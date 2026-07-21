@@ -29,7 +29,6 @@ zinit snippet OMZL::history.zsh
 # OMZ
 zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::kubectl
 zinit snippet OMZP::sudo
 
 # Enable searching through history
@@ -60,7 +59,18 @@ alias lg=lazygit
 
 # Env
 export EDITOR="nvim"
-export PATH=$HOME/.local/bin:$PATH
+
+# Source additional configs
+[ -f "$HOME/.config/zsh/.zshextra" ] && source "$HOME/.config/zsh/.zshextra"
+
+# Node
+export NPM_CONFIG_PREFIX="$HOME/.local"
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+
+# Rust
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # Shell integration
 command -v fzf >/dev/null && source <(fzf --zsh)
@@ -74,9 +84,3 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-# Source additional configs
-[ -f "$HOME/.config/zsh/zshextra" ] && source "$HOME/.config/zsh/zshextra"
-
-# Start zellij if using alacritty
-[ -z "$ALACRITTY_LOG" ] || eval "$(zellij setup --generate-auto-start zsh)"
