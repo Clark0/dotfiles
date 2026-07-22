@@ -26,7 +26,12 @@
     stow
     opencode
     nodejs
+    # fonts
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
+
+  fonts.fontconfig.enable = true;
 
   programs.fzf = {
     enable = true;

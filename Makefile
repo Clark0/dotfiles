@@ -27,7 +27,7 @@ hm-update:
 	nix flake update $(FLAKE)
 
 hm-gc:
-	nix-collect-garbage --delete-older-than 30d
+	nix-collect-garbage --delete-older-than 7d
 
 hm-optimise:
 	nix store optimise
